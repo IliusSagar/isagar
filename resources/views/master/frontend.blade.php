@@ -111,7 +111,7 @@
         </div>
         
         <div class="resumebtn">
-            <a href="" target="_blank" class="btn"><span>Resume</span>
+            <a href="{{ asset('media/iliussagar-cv.pdf')}}" target="_blank" class="btn" download><span>Resume</span>
                 <i class="fas fa-chevron-right"></i>
             </a>
         </div>
@@ -322,26 +322,60 @@
     </div> 
 
     <div class="box tilt">
-        <img draggable="false" src="{{ asset('frontend/assets/images/projects/portfolio1.PNG')}}" alt="" />
+        <img draggable="false" src="{{ asset('media/cvgenerator.png')}}" alt="" />
         <div class="content">
           <div class="tag">
           <h3>CV Generator (Laravel)</h3>
           </div>
           <div class="desc">
-            <p>Personal portfolio website. Don't need much info about it, just scroll down. You're here only!</p>
+            <p>Generate Your CV Online Systems.</p>
             <div class="btns">
-              <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-              <a href="https://github.com/jigar-sable/Portfolio-Website" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+              <a href="https://cvgenerator.isagar.xyz/form" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
+              <a href="https://github.com/IliusSagar/cv-generator" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+
+      <div class="box tilt">
+        <img draggable="false" src="{{ asset('media/portfolio.png')}}" alt="" />
+        <div class="content">
+          <div class="tag">
+          <h3>Portfolio Application (Laravel)</h3>
+          </div>
+          <div class="desc">
+            <p>Personal Portfolio & Details For Personal Branding.</p>
+            <div class="btns">
+              <a href="https://isagar.xyz/" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
+              <a href="https://github.com/IliusSagar/isagar" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+
+      <div class="box tilt">
+        <img draggable="false" src="{{ asset('media/account.png')}}" alt="" />
+        <div class="content">
+          <div class="tag">
+          <h3>Accounting(Laravel)</h3>
+          </div>
+          <div class="desc">
+            <p>Manage Your Business Account.</p>
+            <div class="btns">
+              <a href="https://account.isagar.xyz/" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
+              <a href="https://github.com/IliusSagar/accounting-software" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
             </div>
           </div>
         </div>
       </div> 
 
       <div class="box tilt">
-        <img draggable="false" src="{{ asset('frontend/assets/images/projects/portfolio1.PNG')}}" alt="" />
+        <img draggable="false" src="{{ asset('media/todolist.png')}}" alt="" />
         <div class="content">
           <div class="tag">
-          <h3>Inventory Management (PHP)</h3>
+          <h3>Payment Gateway (Laravel)</h3>
           </div>
           <div class="desc">
             <p>Personal portfolio website. Don't need much info about it, just scroll down. You're here only!</p>
@@ -354,7 +388,39 @@
       </div> 
 
       <div class="box tilt">
-        <img draggable="false" src="{{ asset('frontend/assets/images/projects/portfolio1.PNG')}}" alt="" />
+        <img draggable="false" src="{{ asset('media/todolist.png')}}" alt="" />
+        <div class="content">
+          <div class="tag">
+          <h3>Inventory Management - 1 (PHP)</h3>
+          </div>
+          <div class="desc">
+            <p>Personal portfolio website. Don't need much info about it, just scroll down. You're here only!</p>
+            <div class="btns">
+              <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
+              <a href="https://github.com/jigar-sable/Portfolio-Website" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+      <div class="box tilt">
+        <img draggable="false" src="{{ asset('media/todolist.png')}}" alt="" />
+        <div class="content">
+          <div class="tag">
+          <h3>Inventory Management - 2 (PHP)</h3>
+          </div>
+          <div class="desc">
+            <p>Personal portfolio website. Don't need much info about it, just scroll down. You're here only!</p>
+            <div class="btns">
+              <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
+              <a href="https://github.com/jigar-sable/Portfolio-Website" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+      <div class="box tilt">
+        <img draggable="false" src="{{ asset('media/todolist.png')}}" alt="" />
         <div class="content">
           <div class="tag">
           <h3>Ecommerce Single Vendor (Laravel)</h3>
@@ -370,7 +436,7 @@
       </div> 
 
       <div class="box tilt">
-        <img draggable="false" src="{{ asset('frontend/assets/images/projects/portfolio1.PNG')}}" alt="" />
+        <img draggable="false" src="{{ asset('media/todolist.png')}}" alt="" />
         <div class="content">
           <div class="tag">
           <h3>Micro Finance (Laravel)</h3>
@@ -386,7 +452,7 @@
       </div> 
 
       <div class="box tilt">
-        <img draggable="false" src="{{ asset('frontend/assets/images/projects/portfolio1.PNG')}}" alt="" />
+        <img draggable="false" src="{{ asset('media/todolist.png')}}" alt="" />
         <div class="content">
           <div class="tag">
           <h3>Advertising Platform (Laravel)</h3>
@@ -402,7 +468,7 @@
       </div> 
 
       <div class="box tilt">
-        <img draggable="false" src="{{ asset('frontend/assets/images/projects/portfolio1.PNG')}}" alt="" />
+        <img draggable="false" src="{{ asset('media/todolist.png')}}" alt="" />
         <div class="content">
           <div class="tag">
           <h3>Accounting(Laravel)</h3>
@@ -441,7 +507,7 @@
           <h2>Insaf Book (Ride Sharing Platform)</h2>
         </div>
         <div class="desc">
-            <h3>Laravel Api Developer With Customs Development</h3>
+            <h3>Senior Laravel Api Developer With Customs Development</h3>
             <p>Oct 2024 - present</p>
         </div>
       </div>
@@ -466,7 +532,7 @@
         </div>
         <div class="desc">
             <h3>Senior Software Developer</h3>
-            <p>Jun 2022 - June 2023</p>
+            <p>Jun 2022 - APR 2023</p>
         </div>
       </div>
     </div>
@@ -489,7 +555,7 @@
             <h2>Sass Connect</h2>
           </div>
           <div class="desc">
-              <h3>Sofwtare Develoepr & Founder</h3>
+              <h3>Sofwtare Develoeper & Founder</h3>
               <p>July 2021 - Feb 2022</p>
           </div>
         </div>
