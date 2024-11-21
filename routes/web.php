@@ -38,5 +38,7 @@ Route::group(['middleware'=>'admin'],function(){
     Route::delete('/manage/learning//bulk-delete', [AdminController::class, 'bulkDeleteManageLearning'])->name('bulk.delete.manage.learning');
     Route::get('/manage/learning/view/page', [AdminController::class, 'viewPageManageLearning'])->name('view.page.manage.learning');
     Route::get('/manage/learning/view/{id}', [AdminController::class, 'viewanageLearning'])->name('view.manage.learning');
+
+    Route::get('/search/manage/learning/', [AdminController::class, 'searchManageLearning'])->name('search.manage.learning');
     
 });

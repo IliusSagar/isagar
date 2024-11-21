@@ -161,4 +161,12 @@ return view('backend.learning_management.view_page', compact('all_data', 'totalC
         return view('backend.learning_management.view_page_details', compact('data'));
     }
 
+    public function searchManageLearning(Request $request)
+    {
+        $query = $request->input('query');
+        $learn = Learning::where('title', 'LIKE', "%{$query}%")->get();
+    
+        return response()->json($learn);
+    }
+
 }
