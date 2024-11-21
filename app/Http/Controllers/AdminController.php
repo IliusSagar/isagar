@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Learning;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
@@ -81,6 +84,81 @@ class AdminController extends Controller
     public function adminLogout(){
         Auth::guard('admin')->logout();
         return redirect('admin/login');
+    }
+
+    // Learning Management
+    public function manageLearning(){
+        $all_data = DB::table('learnings')->orderBy('id', 'desc')->paginate(5);
+$totalCount = $all_data->total();       // Total number of records
+
+
+return view('backend.learning_management.manage', compact('all_data', 'totalCount'));
+
+    }
+
+    public function storeManageLearning(Request $request)
+    {
+        $request->validate([
+            'title' => 'required',
+            'slug' => 'required',
+            'description' => 'required',
+        ]);
+    
+        $data = new Learning();
+
+        $data->title = $request->title;
+        $data->slug = $request->slug;
+        $data->description = $request->description;
+
+        $data->save();
+    
+        return redirect()->back()->with('success', 'Learning Management Successfully Added!');
+    }
+
+    public function deleteManageLearning($id)
+    {
+        // Find the category by ID
+        $data = Learning::findOrFail($id);
+        
+       
+        // Delete the category
+        $data->delete();
+    
+        return redirect()->back()->with('success', 'Learning Management Successfully Deleted');
+    }
+
+    public function bulkDeleteManageLearning(Request $request)
+    {
+        // Validate that at least one item is selected
+        $request->validate([
+            'items' => 'required|array|min:1',
+            'items.*' => 'exists:learnings,id', // Ensure all item IDs exist in the learning table
+        ]);
+    
+        // Delete the selected items from the Learning model
+        Learning::whereIn('id', $request->items)->delete();
+    
+        // Redirect back with a success message
+        return redirect()->back()->with('success', 'Learning Management Selected Deleted Successfully.');
+    }
+
+
+    public function viewPageManageLearning(){
+        $all_data = DB::table('learnings')->orderBy('id', 'desc')->paginate(12);
+$totalCount = $all_data->total();       // Total number of records
+
+
+return view('backend.learning_management.view_page', compact('all_data', 'totalCount'));
+
+    }
+
+    public function viewanageLearning($id)
+    {
+        // Find the category by ID
+        $data = Learning::findOrFail($id);
+        
+    
+        return view('backend.learning_management.view_page_details', compact('data'));
     }
 
 }

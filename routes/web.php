@@ -30,5 +30,13 @@ Route::group(['middleware'=>'admin'],function(){
 
     Route::get('/admin/dashboard', [AdminController::class, 'adminDashboard'])->name('admin.dashboard');
     Route::get('/admin/logout', [AdminController::class, 'adminLogout'])->name('admin.logout');
+
+    // Learning management
+    Route::get('/manage/learning', [AdminController::class, 'manageLearning'])->name('manage.learning');
+    Route::post('/manage/learning/store', [AdminController::class, 'storeManageLearning'])->name('store.manage.learning');
+    Route::get('/manage/learning/delete/{id}', [AdminController::class, 'deleteManageLearning'])->name('delete.manage.learning');
+    Route::delete('/manage/learning//bulk-delete', [AdminController::class, 'bulkDeleteManageLearning'])->name('bulk.delete.manage.learning');
+    Route::get('/manage/learning/view/page', [AdminController::class, 'viewPageManageLearning'])->name('view.page.manage.learning');
+    Route::get('/manage/learning/view/{id}', [AdminController::class, 'viewanageLearning'])->name('view.manage.learning');
     
 });
