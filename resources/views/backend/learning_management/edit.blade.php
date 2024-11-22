@@ -15,7 +15,7 @@
         <div class="row mb-2">
           <div class="col-sm-6">
             
-            <h1><span class="text-success" style="border-bottom: 1px dotted green;">Add Learning Management</span></h1>
+            <h1><span class="text-success" style="border-bottom: 1px dotted green;">Edit Learning Management</span></h1>
           </div>
         
         </div>
@@ -33,37 +33,37 @@
             <!-- general form elements -->
             <div class="card card-dark">
               <div class="card-header">
-             <h3 class="card-title">Add Data</h3> 
+             <h3 class="card-title">Edit Data</h3> 
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="{{ route('store.manage.learning')}}" method="post" >
+              <form action="{{ route('update.manage.learning',$learning->id)}}" method="post" >
               @csrf
 
                 <div class="card-body">
 
-                  <div class="form-group">
-                    <label class="custom-label">Status <code>*</code></label><br>
-                    <div>
-                      <label>
-                          <input type="radio" name="status" value="0" checked> Inactive
-                      </label>
-                  </div>
-                  <div>
-                      <label>
-                          <input type="radio" name="status" value="1" > Active
-                      </label>
-                  </div>
-                    <span style="color: red;">
-                        @error('status')
-                            {{$message}}
-                        @enderror
-                    </span>
-                </div>
+                    <div class="form-group">
+                        <label class="custom-label">Status <code>*</code></label><br>
+                        <div>
+                            <label>
+                                <input type="radio" name="status" value="0" {{ old('status', $learning->status) == '0' ? 'checked' : '' }}> Inactive
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input type="radio" name="status" value="1" {{ old('status', $learning->status) == '1' ? 'checked' : '' }}> Active
+                            </label>
+                        </div>
+                        <span style="color: red;">
+                            @error('status')
+                                {{$message}}
+                            @enderror
+                        </span>
+                    </div>
 
                 <div class="form-group">
                 <label class="custom-label">Title <code>*</code></label>
-                <input type="text" name="title" class="form-control" id="textString">
+                <input type="text" name="title" class="form-control" id="textString" value="{{ $learning->title}}">
            
                 <span style="color: red;">
                         @error('title')
@@ -74,7 +74,7 @@
 
                 <div class="form-group">
                 <label class="custom-label">Slug <code>(SEO)</code></label>
-                <input type="text" name="slug" class="form-control" id="textSlug" readonly>
+                <input type="text" name="slug" class="form-control" id="textSlug" value="{{ $learning->slug}}" readonly>
                
                 <span style="color: red;">
                         @error('slug')
@@ -86,7 +86,7 @@
                 <div class="form-group">
                     <label >Description <code>*</code></label><br>
 
-                    <textarea class="form-control" id="summernote" cols="15" rows="15" name="description" > </textarea>
+                    <textarea class="form-control" id="summernote" cols="15" rows="15" name="description" > {{ $learning->description}}</textarea>
 
 
                     <span style="color: red;">
@@ -156,13 +156,13 @@
                                             </td>
                                             <td>{{ $key + 1 + ($all_data->currentPage() - 1) * $all_data->perPage() }}</td>
                                             <td>{{ $item->title }}</td>
-                                            
-                                              @if($item->status == 0)
+
+                                            @if($item->status == 0)
                                               <td><span class="badge bg-danger">inactive</span></td>
                                               @else
                                               <td><span class="badge bg-success">active</span></td>
                                               @endif
-
+                                              
                                             <td>
 
                                               <a href="{{ route('edit.manage.learning', $item->id) }}" 

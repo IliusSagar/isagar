@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Learning extends Model
+class ManageCode extends Model
 {
     use HasFactory;
 
@@ -13,6 +13,6 @@ class Learning extends Model
         'title',
         'slug',
         'status',
-        'description',
+     
     ];
 }

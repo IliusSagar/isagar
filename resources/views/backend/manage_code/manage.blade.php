@@ -15,7 +15,7 @@
         <div class="row mb-2">
           <div class="col-sm-6">
             
-            <h1><span class="text-success" style="border-bottom: 1px dotted green;">Add Learning Management</span></h1>
+            <h1><span class="text-success" style="border-bottom: 1px dotted green;">Add Developer Code</span></h1>
           </div>
         
         </div>
@@ -37,7 +37,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="{{ route('store.manage.learning')}}" method="post" >
+              <form action="{{ route('store.manage.code')}}" method="post" >
               @csrf
 
                 <div class="card-body">
@@ -82,20 +82,7 @@
                         @enderror
                     </span>
                 </div>
-                 
-                <div class="form-group">
-                    <label >Description <code>*</code></label><br>
-
-                    <textarea class="form-control" id="summernote" cols="15" rows="15" name="description" > </textarea>
-
-
-                    <span style="color: red;">
-                        @error('description')
-                            {{$message}}
-                        @enderror
-                        </span>
-
-                    </div>
+              
                 
                   
                 </div>
@@ -127,7 +114,7 @@
                             <p class="text-success text-bold">Total Data: {{ $all_data->total() }}</p>
                           
                         </div>
-                        <form id="bulk-delete-form" method="POST" action="{{ route('bulk.delete.manage.learning') }}">
+                        <form id="bulk-delete-form" method="POST" action="{{ route('bulk.delete.manage.code') }}">
                             @csrf
                             @method('DELETE')
                             
@@ -165,13 +152,13 @@
 
                                             <td>
 
-                                              <a href="{{ route('edit.manage.learning', $item->id) }}" 
+                                              <a href="{{ route('edit.manage.code', $item->id) }}" 
                                                 class="btn btn-sm btn-primary " 
                                                 data-id="{{ $item->id }}">
                                                  <i class="fa fa-pencil-alt"></i> edit
                                              </a>
                                                 
-                                                <a href="{{ route('delete.manage.learning', $item->id) }}" 
+                                                <a href="{{ route('delete.manage.code', $item->id) }}" 
                                                    class="btn btn-sm btn-danger delete-btn" 
                                                    data-id="{{ $item->id }}">
                                                     <i class="fa fa-trash"></i> Delete

@@ -29,7 +29,13 @@
           
             <div class="col-md-12">
                 <div class="card shadow p-2">
-                    <h2>{{ $data->title }}</h2>
+                    <h2>{{ $data->title }} 
+                      @if($data->status == 0)
+                     <span class="badge bg-danger">inactive</span>
+                      @else
+                      <span class="badge bg-success">active</span>
+                      @endif
+                    </h2>
 
 
                     <div>

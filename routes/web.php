@@ -36,9 +36,18 @@ Route::group(['middleware'=>'admin'],function(){
     Route::post('/manage/learning/store', [AdminController::class, 'storeManageLearning'])->name('store.manage.learning');
     Route::get('/manage/learning/delete/{id}', [AdminController::class, 'deleteManageLearning'])->name('delete.manage.learning');
     Route::delete('/manage/learning//bulk-delete', [AdminController::class, 'bulkDeleteManageLearning'])->name('bulk.delete.manage.learning');
+    Route::get('/manage/learning/edit/{id}', [AdminController::class, 'editManageLearning'])->name('edit.manage.learning');
+    Route::post('/manage/learning/update/{id}', [AdminController::class, 'updateManageLearning'])->name('update.manage.learning');
     Route::get('/manage/learning/view/page', [AdminController::class, 'viewPageManageLearning'])->name('view.page.manage.learning');
     Route::get('/manage/learning/view/{id}', [AdminController::class, 'viewanageLearning'])->name('view.manage.learning');
-
     Route::get('/search/manage/learning/', [AdminController::class, 'searchManageLearning'])->name('search.manage.learning');
+
+    // Development management
+    Route::get('/manage/code', [AdminController::class, 'manageCode'])->name('manage.code');
+    Route::post('/manage/code/store', [AdminController::class, 'storeManageCode'])->name('store.manage.code');
+    Route::get('/manage/code/delete/{id}', [AdminController::class, 'deleteManageCode'])->name('delete.manage.code');
+    Route::delete('/manage/code//bulk-delete', [AdminController::class, 'bulkDeleteManageCode'])->name('bulk.delete.manage.code');
+    Route::get('/manage/code/edit/{id}', [AdminController::class, 'editManageCode'])->name('edit.manage.code');
+    Route::post('/manage/code/update/{id}', [AdminController::class, 'updateManageCode'])->name('update.manage.code');
     
 });
